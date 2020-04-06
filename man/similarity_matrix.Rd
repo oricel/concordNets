@@ -4,8 +4,13 @@
 \alias{similarity_matrix}
 \title{Similarity Matrix}
 \usage{
-similarity_matrix(mat, concords = vecs2concords(mat),
-  simil_measure = "ARI", reactive_dom = NULL, incProg_amount = 1)
+similarity_matrix(
+  mat,
+  concords = vecs2concords(mat),
+  simil_measure = "ARI",
+  reactive_dom = NULL,
+  incProg_amount = 1
+)
 }
 \arguments{
 \item{mat}{matrix}

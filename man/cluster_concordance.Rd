@@ -4,10 +4,20 @@
 \alias{cluster_concordance}
 \title{Concordance Network Clustering}
 \usage{
-cluster_concordance(mat, nrows = nrow(mat), ncols = ncol(mat),
-  thresh = 1, detectAlgo = "WT", simil_measure = "ARI",
-  centrality = "Betweenness", cluster_colors = NULL, sparsify = 0,
-  simplify_graphs = TRUE, reactive_dom = NULL, incProg_amount = 1)
+cluster_concordance(
+  mat,
+  nrows = nrow(mat),
+  ncols = ncol(mat),
+  thresh = 1,
+  detectAlgo = "WT",
+  simil_measure = "ARI",
+  centrality = "Betweenness",
+  cluster_colors = NULL,
+  sparsify = 0,
+  simplify_graphs = TRUE,
+  reactive_dom = NULL,
+  incProg_amount = 1
+)
 }
 \arguments{
 \item{mat}{MxN matrix}
@@ -16,7 +26,7 @@ cluster_concordance(mat, nrows = nrow(mat), ncols = ncol(mat),
 
 \item{ncols}{number of columns to analyze (defaults to all columns)}
 
-\item{thresh}{discriminatory threshold to determine present vs. not present}
+\item{thresh}{integer threshld below which entries (e.g. symptom scores) will be set to 0 (i.e. considered as non-present)}
 
 \item{detectAlgo}{string value, the type of network community detection algorithm to use (defaults to 'WT')}
 
@@ -30,8 +40,6 @@ cluster_concordance(mat, nrows = nrow(mat), ncols = ncol(mat),
 
 \item{reactive_dom}{reactive domain in case used in a shiny app (will be used by incProgress()).}
 
-\item{thresh}{integer threshld below which entries (e.g. symptom scores) will be set to 0 (i.e. considered as non-present)}
-
 \item{inProg_amount}{real number in [0,1], the amount of status bar to fill up (default is 1), in case used in a shiny app (will be used by incProgress()).}
 }
 \value{
@@ -42,8 +50,8 @@ This function receives an MxN matrix with named columns (will be used to name ve
 and returns a list of igrpah graphs representing the resulting clusters (e.g. symptom clusters of "patient communities").
 }
 \details{
-It does so using the method of concordance networks clustering as described in Henry et al.
-"Concordance networks and application to clustering cancer symptomology - PLOS." 14 Mar. 2018.
+It does so using the method of concordance networks clustering as described in Henry et al. 
+"Concordance networks and application to clustering cancer symptomology - PLOS." 14 Mar. 2018. 
 
 The detection algorithm (from the igraph library) can be chosen out of the following list:
 
