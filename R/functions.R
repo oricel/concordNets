@@ -357,6 +357,7 @@ cluster_concordance <- function(mat, nrows=nrow(mat), ncols=ncol(mat), thresh=1,
 #' @param pre_title title before the main title, as in "<pre-titile>: <title>"
 #' @keywords list graphs networks visNetwork
 #' @return a visNetwork representing the given networks
+#' @export
 #' @examples
 #' 
 #' data = rbinom(300*20, 1, .2)
